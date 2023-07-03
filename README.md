@@ -13,3 +13,7 @@ Vite
 React
 
 - npm i react@18.2.0 react-dom@18.2.0
+
+ESLint
+
+npm i -D eslint-plugin-import@2.26.0 eslint-plugin-jsx-a11y@6.6.1 eslint-plugin-react@7.31.8

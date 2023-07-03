@@ -1,11 +1,15 @@
 {
   "extends": [
     "eslint:recommended",
+    "plugin:import/errors",
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended",
     "prettier"
   ],
-  "plugins": [
-
-  ],
+  "rules": {
+    "react/prop-types": 0,
+    "react/react-in-jsx-scope": 0,
+  },
   "parserOptions": {
     "ecmaVersion": 2022,
     "sourceType": "module",
