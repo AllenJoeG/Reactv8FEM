@@ -11,9 +11,14 @@
 
   <!-- root for React App  -->
   <div id="root">not rendered</div>
-  <script src="https://unpkg.com/react@18.2.0/umd/react.development.js"></script>
-  <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
-  <script src="./App.js">
+  
+  <!--
+    No longer necessary once we bundle react into the project.
+    See vite.config.js for analogous invocation
+    <script src="https://unpkg.com/react@18.2.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script> 
+  -->
+  <script type="module" src="./App.jsx">
   </script>
   
 </body>
