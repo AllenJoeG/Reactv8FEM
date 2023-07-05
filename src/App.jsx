@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
+import {createRoot} from 'react-dom/client';
 import Pet from './Pet';
 import SearchParams from './SearchParams';
 
@@ -24,7 +25,8 @@ const App = () => {
 //grabs root div
 const container = document.getElementById("root");
 //establishes said div as React Root. replaces: [ReactDOM.render(container, <App />)]
-const root = ReactDOM.createRoot(container);
+// const root = ReactDOM.createRoot(container);
+const root = createRoot(container);
 //instructs root to render our base-level App component. Can be reused to rerender your entire app with a simple root.render call
 // root.render(React.createElement(App));
 //equivalent to:

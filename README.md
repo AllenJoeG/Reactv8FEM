@@ -1,4 +1,5 @@
 # Reactv8FEM
+Currently holding notes taken during class. To be cleaned up at a later date.
 
 ## shell commands
 
