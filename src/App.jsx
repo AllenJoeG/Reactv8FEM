@@ -13,11 +13,11 @@ const App = () => {
       <h1>Adopt these biological constructs!</h1>
       <SearchParams />
 
-      <div>
+      {/* <div>
         <Pet name="Mina" animal="cat" breed="tortoiseshell"/>
         <Pet name="Quade" animal="cat" breed="orangeboi"/>
         <Pet name="Speedo" animal="spider" breed="yellowsac"/>
-      </div>
+      </div> */}
     </div>
   )
 };

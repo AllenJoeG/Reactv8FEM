@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
+import Pet from './Pet';
 const ANIMALS = ["bird", "cat", "dog", "rabbit", "reptile"];
 
 const SearchParams = () => {
@@ -6,12 +7,33 @@ const SearchParams = () => {
   const [location, setLocation] = useState("");
   const [animal, setAnimal] = useState("");
   const [breed, setBreed] = useState("");
+  const [pets, setPets] = useState([]);
+  const breeds = [];
 
-  const breeds = ["tortoiseshell"];
+  //square bracket arg2 of useEffect used to specify which state changes trigger rerender of component, i.e. [animal, location]
+  //empty array runs the effect only once after initial render
+  useEffect(() => {
+    requestPets();
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  async function requestPets() {
+    const res = await fetch(
+      `http://pets-v2.dev-apis.com/pets?animal=${animal}&location=${location}&breed=${breed}`
+    )
+    const json = await res.json();
+    setPets(json.pets);
+  }
+
+  
 
   return (
     <div className="search-params">
-      <form>
+      <form 
+        onSubmit={e => {
+          e.preventDefault();
+          requestPets();
+        }}
+      >
         <label htmlFor="location">
           Location:
           <input 
@@ -64,6 +86,16 @@ const SearchParams = () => {
           Submit
         </button>
       </form>
+
+      {pets.map(pet => (
+        <Pet 
+          key={pet.id}
+          name={pet.name} 
+          animal={pet.animal} 
+          breed={pet.breed} 
+        />
+      ))}
+
     </div>
   )
 }
