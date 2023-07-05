@@ -1,6 +1,5 @@
 //custom hook
 import {useState, useEffect} from 'react';
-
 const localCache = {};
 
 export default function useBreedList(animal){
@@ -24,9 +23,9 @@ export default function useBreedList(animal){
         `http://pets-v2.dev-apis.com/breeds?animal=${animal}`
       )
       const json = await res.json();
-      localCache[animal] = json.breeds || []
-      setBreedList(localCache[animal])
-      setStatus("loaded")
+      localCache[animal] = json.breeds || [];
+      setBreedList(localCache[animal]);
+      setStatus("loaded");
     }
   }, [animal]);
 

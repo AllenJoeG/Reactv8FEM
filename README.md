@@ -14,8 +14,9 @@ Vite
 React
 
 - npm i react@18.2.0 react-dom@18.2.0
+- npm i react-router-dom@6.4.1
 
 ESLint
 
-npm i -D eslint-plugin-import@2.26.0 eslint-plugin-jsx-a11y@6.6.1 eslint-plugin-react@7.31.8
-npm i -D eslint-plugin-react-hooks@4.6.0  
+- npm i -D eslint-plugin-import@2.26.0 eslint-plugin-jsx-a11y@6.6.1 eslint-plugin-react@7.31.8
+- npm i -D eslint-plugin-react-hooks@4.6.0  

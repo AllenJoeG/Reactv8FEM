@@ -1,24 +1,23 @@
 import React, {useState} from 'react';
-import ReactDOM from 'react-dom';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {createRoot} from 'react-dom/client';
-import Pet from './Pet';
 import SearchParams from './SearchParams';
+import Details from './Details';
 
 
 // App MUST be capitalized
 const App = () => {
   
   return(
-    <div>
-      <h1>Adopt these biological constructs!</h1>
-      <SearchParams />
+    <BrowserRouter>
+        <h1>Adopt these biological constructs!</h1>
 
-      {/* <div>
-        <Pet name="Mina" animal="cat" breed="tortoiseshell"/>
-        <Pet name="Quade" animal="cat" breed="orangeboi"/>
-        <Pet name="Speedo" animal="spider" breed="yellowsac"/>
-      </div> */}
-    </div>
+        <Routes>
+        <Route path="/details/:id" element={<Details />} />
+        <Route path="/" element={<SearchParams />} />
+        </Routes>
+
+    </BrowserRouter>
   )
 };
 
