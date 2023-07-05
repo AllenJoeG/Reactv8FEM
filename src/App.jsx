@@ -1,22 +1,37 @@
 import React, {useState} from 'react';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Link, BrowserRouter, Routes, Route } from "react-router-dom";
 import {createRoot} from 'react-dom/client';
 import SearchParams from './SearchParams';
 import Details from './Details';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
+//Instantiate and configure tanstack React Query Client. Wrap in the return below.
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      // How long to cache for, in ms, OR infinity.
+      staleTime: Infinity,
+      cacheTime: Infinity,
+    },
+  },
+
+})
 
 // App MUST be capitalized
 const App = () => {
   
   return(
     <BrowserRouter>
-        <h1>Adopt these biological constructs!</h1>
-
+      <QueryClientProvider client={queryClient}>
+        <header>
+          <Link to="/"><h1>Adopt these biological constructs!</h1></Link>
+        </header>
+            
         <Routes>
-        <Route path="/details/:id" element={<Details />} />
-        <Route path="/" element={<SearchParams />} />
+          <Route path="/details/:id" element={<Details />} />
+          <Route path="/" element={<SearchParams />} />
         </Routes>
-
+      </QueryClientProvider>  
     </BrowserRouter>
   )
 };

@@ -11,10 +11,11 @@ Vite
 
 - npm i -D vite@3.1.4 @vitejs/plugin-react@2.1.0
 
-React
+React Addons
 
 - npm i react@18.2.0 react-dom@18.2.0
 - npm i react-router-dom@6.4.1
+- npm i @tanstack/react-query@4.10.1
 
 ESLint
 
