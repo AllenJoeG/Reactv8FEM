@@ -17,3 +17,4 @@ React
 ESLint
 
 npm i -D eslint-plugin-import@2.26.0 eslint-plugin-jsx-a11y@6.6.1 eslint-plugin-react@7.31.8
+npm i -D eslint-plugin-react-hooks@4.6.0  
